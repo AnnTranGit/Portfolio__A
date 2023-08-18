@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin:0;
+    font-family: 'Hind', sans-serif;
+}
+/*Css dùng chung cho nhiều ele (thẻ) thì viết riêng*/
+span.active {
+    font-size: 16px;
+    font-weight: 400;
+    color:#35a22c !important;
+    border-bottom:3px solid #35a22c !important;
+}
+
+
+/*Css từng phần layout thì theo thứ tự từ ngoài ngoài trong*/
+
+.header .container{
+    height: 75px;
+}
+
+.header .menu ul {
+    list-style: none;
+}
+
+.header .menu ul li {
+}
+
+.header .menu ul li a {
+    text-decoration: none;
+    color:#fff;
+    position: relative;
+
+}
+.header .menu ul li a:hover {
+    color:#35a22c;
+    transition: color 0.5s;
+}
+.header .menu ul li a::after {
+    content: '';
+    width: 0px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0; 
+    transition: width 0.5s;
+}
+/*hover vào thẻ a after sẽ thay đổi*/
+.header .menu ul li a:hover::after{
+    width: 100%;
+    color: #35a22c;
+    background-color: #35a22c;
+    transition: width 0.5s;
+}
+
+/*css cho phần carousel*/
+.slider {
+    position: relative;
+}
+
+.slider .carousel-item img{
+    object-fit: cover;
+    height: 100vh;
+
+}
+
+.slider .carousel-indicators, .slider .carousel-control-prev, .slider .carousel-control-next, .carousel-caption{
+    z-index: 11;
+}
+
+.slider .carousel{
+    height: 100vh;
+}
+
+.slider .carousel-inner{
+    height: 100%;
+} 
+
+
+.slider .carousel-inner .overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+    position: absolute;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    display:none;
+}
+
+.slider .carousel .carousel-caption{
+    color: white!important;
+    margin-bottom: 15px;
+}
+
+.slider .carousel .carousel-indicators{
+    height: auto;
+}
+
+.slider .carousel .carousel-indicators button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border:none!important;
+    padding: 0;
+
+}
+
+.slider .carousel .carousel-indicators button.active {
+    background: #35a22c;
+}
+
+.slider .carousel .carousel-caption{
+    display: flex!important;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.slider .carousel-item .carousel-caption img {
+    width: 140px;
+    height: auto;
+    border-radius: 50%;
+    margin: 10px auto;
+    animation: fadeUp 1s;
+    
+}
+
+.slider .carousel-item .carousel-caption h5{
+    animation: fadeUp 1s;
+    animation-delay: 1s;  /*Đợi sau 1 giây thì animation mới chạy*/
+    opacity: 0;
+    animation-fill-mode: both; /*Giữ lại trạng thái cuối cùng của animation*/
+    font-size: 3rem;
+
+}
+
+.slider .carousel .carousel-caption p{
+    animation: fadeUp 1s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: both; /*Giữ lại trạng thái cuối cùng của animation*/
+    font-size: 1.5rem;
+
+}
+
+
+
+
+/* PROJECT */
+
+.project .card:hover{
+    border-color: #35a22c;
+    color:#35a22c;
+    transition: all 1s;
+    cursor: pointer;
+
+}
+
+.project .card {
+    animation: scale-item 1s;
+}
+
+.project button.nav-link{
+    color: black;
+    border: 1px solid black;
+    margin: 0 5px;
+}
+
+.project button.nav-link.active{
+    background-color: #35a22c;
+    color: white;
+    border: none;
+}
+
+/* AVAILABLE */
+
+.available{
+    background: url(../img/3.jpg);
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    min-height: 600px;
+}
+
+/* .available .overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+.available .content{
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    min-height:600px ;
+}
+.available .card{
+    background-color: transparent;
+    transition: background 0.5s;
+
+}
+
+.available .card:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0);
+    transition: background 0.5s;
+    
+}
+
+
+@keyframes fadeUp {
+    0%{
+        transform: translateY(200px);
+        opacity: 0;
+
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+
+@keyframes scale-item {
+    0%{
+        transform:scale(0,0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1,1);
+        opacity: 1;
+
+    }
+}
+
+.achievement{
+    min-height: 600px;
+    background-image: url(../img/memphis_3.png) 0 100% no-repeat, url(../img/memphis_2.png) top left no-repeat ;
+
+    background-size: 550px , 600px;
+}
+
+.bg-2{
+    background-image: url(../img/memphis_2.png);
+    background-repeat: no-repeat;
+}
